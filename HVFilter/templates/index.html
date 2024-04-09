@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buscar Palabra en Archivos PDF</title>
+</head>
+<body>
+    <h1>Buscar Palabra en Archivos PDF</h1>
+
+    <form action="/buscar" method="post" enctype="multipart/form-data">
+        <label for="carpeta">Seleccionar Carpeta:</label>
+        <input type="file" id="carpeta" name="carpeta" directory="" webkitdirectory="" mozdirectory="">
+        <br>
+        <label for="palabra">Ingresar Palabra:</label>
+        <input type="text" id="palabra" name="palabra">
+        <br>
+        <button type="submit">Buscar</button>
+    </form>
+</body>
+</html>

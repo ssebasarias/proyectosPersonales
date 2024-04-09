@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultados de Búsqueda</title>
+</head>
+<body>
+    <h1>Resultados de Búsqueda</h1>
+
+    <p>{{ mensaje }}</p>
+
+    <ul>
+        {% for resultado in resultados %}
+            <li>{{ resultado }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
