@@ -3,19 +3,74 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Buscar Palabra en Archivos PDF</title>
+    <title>Filtro de Archivos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+
+        .container {
+            max-width: 500px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            margin-top: 0;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="file"] {
+            padding: 8px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        button[type="submit"] {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+    </style>
 </head>
 <body>
-    <h1>Buscar Palabra en Archivos PDF</h1>
+    <div class="container">
+        <h2>Filtro de Archivos</h2>
+        <form action="/filtrar" method="post" enctype="multipart/form-data">
+            <label for="frase">Frase o Palabra a Buscar:</label>
+            <input type="text" id="frase" name="frase">
 
-    <form action="/buscar" method="post" enctype="multipart/form-data">
-        <label for="carpeta">Seleccionar Carpeta:</label>
-        <input type="file" id="carpeta" name="carpeta" directory="" webkitdirectory="" mozdirectory="">
-        <br>
-        <label for="palabra">Ingresar Palabra:</label>
-        <input type="text" id="palabra" name="palabra">
-        <br>
-        <button type="submit">Buscar</button>
-    </form>
+            <label for="carpeta">Carpeta:</label>
+            <input type="file" id="carpeta" name="carpeta" directory webkitdirectory>
+
+            <button type="submit">Filtrar</button>
+        </form>
+    </div>
 </body>
 </html>
