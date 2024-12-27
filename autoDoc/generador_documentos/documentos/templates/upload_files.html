@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generador de Documentos</title>
+</head>
+<body>
+    <h1>Generador de Documentos</h1>
+    <form action="{% url 'upload_files' %}" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <label for="archivo_excel">Subir archivo Excel:</label>
+        <input type="file" name="archivo_excel" id="archivo_excel" required>
+        <button type="submit">Procesar</button>
+    </form>
+    
+    <br>
+    <a href="{% url 'descargar_plantilla' %}">
+        <button>Descargar Plantilla Excel</button>
+    </a>
+</body>
+</html>
